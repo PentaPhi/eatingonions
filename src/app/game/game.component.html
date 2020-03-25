@@ -1,0 +1,30 @@
+<div style="width:100vw; height:100vh;background-color: black !important;">
+  <div [className]="imageSwitch ? 'img imganimation' : 'img imggone'" [ngStyle]="{'background-image': 'url('+imageUrl+')'}">
+  </div>
+<div class="pointContainer">
+  <p class="pointLeft">{{pointsWrong}}</p><p class="pointRight">{{pointsTrue}}</p>
+  </div>
+    <div class="points"><div class="leftpoint"></div><div class="rightpoint"></div></div>
+    <p  [className]="rebootSwitch ? 'txt animation' : 'txt rmv'">{{use.txt}}</p>
+  <div [className]="rebootSwitch ? ' animation btncontainer' : 'rmv'">
+    <button class="btn" (click)="fiction()" mat-raised-button color="warn">{{use.fictiontxt}}</button>
+  </div>
+  <div [className]="rebootSwitch ? ' animation btncontainer right' : 'rmv'" >
+    <button class="btn" style="background-color:#10c93c" (click)="fact()" mat-raised-button color="warn">{{use.facttxt}}</button>
+  </div>
+  <div [className]="doneSwitch ? 'rmv' : 'donecontainer' ">
+  <mat-card class="done">
+    <h1>{{messageOne}}</h1>
+    <p>{{messageTwo}}</p>
+    <p>Source:<a style="color:#05a" target="_blank" rel="noreferrer" href="{{use.sourceurl}}">{{use.source}}</a></p>
+
+    <button (click)="update()" mat-raised-button color="warn">Next Round!</button>
+  </mat-card>
+  </div>
+  <div [className]="noInternet ?  'donecontainer' : 'rmv' ">
+  <mat-card class="done">
+    <h1>The internet connection seems to have troubles right now.</h1>
+<img src="/assets/network.gif" width="200px"> 
+  </mat-card>
+  </div>
+</div>
